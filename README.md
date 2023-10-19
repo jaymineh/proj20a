@@ -27,3 +27,7 @@ docker network create --subnet=172.18.0.0/24 app_network_tooling
 ```
 docker run --network app_network_tooling -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW -d mysql/mysql-server:latest
 ```
+
+- Run `docker ps -a` to verify if the container was created.
+
+![Container Created](images/dpsa.png)
