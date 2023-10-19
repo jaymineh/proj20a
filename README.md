@@ -8,3 +8,15 @@
 *As of the time of this doc, Docker is having some issues being deployed on RHEL servers. Use ubuntu instead.*
 
 *Docker installation steps can be found [here](https://docs.docker.com/engine/install/ubuntu/)*
+
+**Step 1 - Creating MySQL Container For Tooling App Backend**
+---
+
+- Create a network dedicated for the MySQL database and tooling application we would containerize on docker.
+
+*The docker network allows artifacts in that network communicate with each other*
+
+```
+docker network create --subnet=172.18.0.0/24 app_network_tooling
+```
+
