@@ -54,3 +54,25 @@ docker run --network app_network_tooling --name mysql-client -it --rm mysql mysq
 *For some reason, I'm unable to connect if I do `-u rooot`. It only works when I do -uroot.*
 
 ![MySQL Connect](images/sqlconnect.png)
+
+**Step 2 - Prepping The Database Schema**
+---
+
+- Clone the tooling app repo from `https://github.com/darey-devops/tooling.git`.
+
+- Locate the `tooling_db_schema.sql` file inside the newly cloned tooling folder and export the location.
+
+```
+export tooling_db_schema=~/tooling_db_schema.sql
+```
+
+- Run the SQL script against the SQL container to create the database and prepare the schema.
+
+```
+docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
+```
+
+**Step 3 - Running The Tooling App**
+---
+
+- 
