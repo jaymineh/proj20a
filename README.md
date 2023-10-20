@@ -31,3 +31,17 @@ docker run --network app_network_tooling -h mysqlserverhost --name=mysql-server 
 - Run `docker ps -a` to verify if the container was created.
 
 ![Container Created](images/dpsa.png)
+
+- Create a file called `create user.sql`, which will host a command to create a user. This is done because it is not advisable to connect to MySQL server remotely using root. See command below:
+
+```
+create user '<username>'@'%' identified by '<password>';
+grant all privileges on *.* to 'vergil'@'%';
+```
+
+- Run the above script to create the new user.
+
+```
+docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < create_user.sql
+```
+
