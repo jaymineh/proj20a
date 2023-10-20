@@ -75,4 +75,41 @@ docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
 **Step 3 - Running The Tooling App**
 ---
 
-- 
+- Go to the tooling app directory and locate the Dockerfile. Open it and modify the ENV details to match the correct database credentials. See sample below.
+
+```
+MYSQL_IP=mysqlserverhost
+MYSQL_USER=<username>
+MYSQL_PASS=<password>
+MYSQL_DBNAME=toolingdb
+```
+
+- After the above is done, build the image by running `docker build -t tooling:0.0.1 .` *This command builds the docker image, gives it a name, a version tag and uses this current directory for the build, hence the .*
+
+- After the build completes, run the container by using the following command.
+
+```
+docker run --network app_network_tooling -p 8085:80 -it tooling:0.0.1
+```
+
+- After the above command is run, check the running containers by doing a `docker container ls`. The container we're looking for (tooling) would most likely be absent from the list. In that case, run `docker ps -a` to see tooling.
+
+![Tooling](images/tooling.png)
+
+- Run the following command to start the tooling container. Take note of the container ID from the above screenshot.
+
+```
+docker start <containerId>
+```
+
+![Docker Start](images/dockerstart.png)
+
+- Run `docker container ls` to confirm if container is running.
+
+![Container Status](images/containerls.png)
+
+
+
+
+
+
