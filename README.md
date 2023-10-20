@@ -92,6 +92,8 @@ MYSQL_DBNAME=toolingdb
 docker run --network app_network_tooling -p 8085:80 -it tooling:0.0.1
 ```
 
+*The above command runs the tooling image inside the app_network_tooling docker network and binds the internal app port of 80 to an external port of 8085 so it can be accessed externally.*
+
 - After the above command is run, check the running containers by doing a `docker container ls`. The container we're looking for (tooling) would most likely be absent from the list. In that case, run `docker ps -a` to see tooling.
 
 ![Tooling](images/tooling.png)
@@ -108,8 +110,10 @@ docker start <containerId>
 
 ![Container Status](images/containerls.png)
 
+- Test the tooling app in the browser. Go to `http://<IPaddress>:8085`.
 
+![Success](images/success.png)
 
-
+**Project Deployed Successfully!**
 
 
