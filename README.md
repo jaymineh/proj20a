@@ -45,3 +45,12 @@ grant all privileges on *.* to 'vergil'@'%';
 docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < create_user.sql
 ```
 
+- Connect to the MySQL server from a second container running the MySQL client utility.
+
+```
+docker run --network app_network_tooling --name mysql-client -it --rm mysql mysql -h mysqlserverhost -uvergil -p
+```
+
+*For some reason, I'm unable to connect if I do `-u rooot`. It only works when I do -uroot.*
+
+![MySQL Connect](images/sqlconnect.png)
