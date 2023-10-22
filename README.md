@@ -135,9 +135,6 @@ docker tag tooling:0.0.5 jaymineh/tool:0.0.1
 
 ![Result](images/pushresult.png)
 
-
-
-
 **Project Deployed Successfully!**
 
 
