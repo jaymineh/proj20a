@@ -114,6 +114,24 @@ docker start <containerId>
 
 ![Success](images/success.png)
 
+**Step 4 - Pushing The Image To DockerHub**
+---
+
+- Login to your docker account on the terminal. *If you don't have a docker account, create one and create a repository.*
+
+```
+docker login
+```
+
+- Give the image a new name and tag by running the command below:
+
+```
+docker tag tooling:0.0.5 jaymineh/tool:0.0.1
+```
+
+
+
+
 **Project Deployed Successfully!**
 
 
