@@ -129,6 +129,12 @@ docker login
 docker tag tooling:0.0.5 jaymineh/tool:0.0.1
 ```
 
+- Push to your docker repository by running `docker push <image>`.
+
+![Push](images/dockerpush.png)
+
+![Result](images/pushresult.png)
+
 
 
 
